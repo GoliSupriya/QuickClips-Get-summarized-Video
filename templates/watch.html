@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watch Summarized Video</title>
+</head>
+<body>
+    <h2>Summarized Video</h2>
+    <video width="720" controls>
+        <source src="{{ url_for('serve_video', filename=filename) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

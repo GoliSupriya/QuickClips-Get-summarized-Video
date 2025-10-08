@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickClips</title>
+    <link rel="icon" href="/static/Images/logo1.png">
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <div class="title-section">
+        <img src="/static/Images/logo.png" class="logo">
+        <h2 class="title">QuickClips</h2>
+    </div>
+
+    <div class="main-content">
+        <div class="typewriter">
+            Transform lengthy videos into concise highlights — saving time while retaining what matters most.
+        </div>
+
+        <form action="/process" method="POST" enctype="multipart/form-data" id="uploadForm" class="container">
+            <input type="text" placeholder="Enter YouTube URL" id="yturl" name="yturl" oninput="toggleInput('url')"><br><br>
+            Choose video file: <input type="file" id="videofile" name="videofile" accept="video/*" onchange="toggleInput('file')"><br><br>
+            It may take around 5 minutes . Please wait 😊
+            <button name="summarization_type" type="submit" value="summarized_video" id="summarization_type">Get Summarized Video</button>
+        </form>
+    </div>
+
+    <div id="loadingOverlay">
+        <div class="spinner"></div>
+        Processing your video...
+    </div>
+
+
+    <div id="output"></div>
+
+    <script>
+        function toggleInput(type){
+            const url = document.getElementById("yturl");
+            const file = document.getElementById("videofile");
+            if(type==="url" && url.value.trim()!==""){ 
+                file.disabled = true; 
+            } else if(type==="file" && file.value!==""){ 
+                url.disabled = true; 
+            } else { 
+                file.disabled = false; 
+                url.disabled = false; 
+            }
+        }
+
+        const form = document.getElementById("uploadForm");
+        form.addEventListener("submit", function() {
+            document.getElementById("loadingOverlay").style.display = "flex";
+        });
+    </script>
+</body>
+</html>

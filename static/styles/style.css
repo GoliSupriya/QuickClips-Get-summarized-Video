@@ -1,0 +1,195 @@
+/* ----------------------
+   General Body
+---------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ----------------------
+   Title Section (Logo + Site Name)
+---------------------- */
+.title-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 10px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* ----------------------
+   Typewriter Effect
+---------------------- */
+.typewriter {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid; /* caret */
+    width: 0;                  /* will animate to full length */
+    animation:
+      typing 6s steps(83, end) forwards, /* match steps with text length */
+      blink .7s step-end infinite;
+    text-align: center;
+    max-width: 90%; /* wraps on small screens */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to   { width: 87ch; } /* adjust to text length */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter {
+        animation: none;
+        width: auto;
+        border: none;
+    }
+}
+
+/* ----------------------
+   Main Wrapper for Typewriter + Form
+---------------------- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ----------------------
+   Form Container Styling
+---------------------- */
+.container {
+    border: 1px solid #ffffff66; /* subtle border */
+    background-color: #1a1a1a;   /* dark card effect */
+    width: 350px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;         /* rounded edges */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.6);
+    margin-top: 20px;            /* space between typewriter and form */
+}
+
+/* Inputs Styling */
+.container input[type="text"],
+.container input[type="file"],
+.container select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #222;
+    color: white;
+    font-size: 14px;
+}
+
+/* File input specific */
+.container input[type="file"] {
+    padding: 6px;
+    background-color: #111;
+}
+
+/* Button Styling */
+.container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* ----------------------
+   Output Section
+---------------------- */
+#output {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+/* ----------------------
+   Responsive Adjustments
+---------------------- */
+@media screen and (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    .typewriter {
+        font-size: 18px;
+        white-space: normal;
+        overflow: visible;
+    }
+}
+
+
+#loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            font-size: 1.5em;
+            flex-direction: column;
+        }
+
+        /* Spinner */
+        .spinner {
+            border: 8px solid #f3f3f3; 
+            border-top: 8px solid #3498db; 
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
