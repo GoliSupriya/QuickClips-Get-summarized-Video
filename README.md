@@ -1,3 +1,6 @@
+Execution process:
+Download the required files and execute app.py
+
 <img width="1881" height="913" alt="image" src="https://github.com/user-attachments/assets/29679111-f694-43f1-b26b-0be2b96e4f0d" />
 
 QuickClips- Get Condensed video 
