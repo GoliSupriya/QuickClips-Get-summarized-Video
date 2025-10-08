@@ -15,3 +15,5 @@ Timestamp Mapping – Key points are matched with their corresponding timestamps
 Summarized Video Generation – The selected clips are stitched together to produce a concise, meaningful video summary.
 
 The final output is a shortened video that highlights only the most relevant parts, saving time while retaining the core message.
+
+<img width="1081" height="564" alt="image" src="https://github.com/user-attachments/assets/cca0bc26-46c9-4249-8249-ed5642015cec" />
